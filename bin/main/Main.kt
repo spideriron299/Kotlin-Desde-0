@@ -19,4 +19,9 @@ fun main(args: Array<String>) {
     val segundoValor = 10
     val tercerValor = primervalor - segundoValor
     println(tercerValor)
+
+    val apellido = "Badillo"
+    val diego = "Diego"
+    val nombreCompleto = "Mi nombre es $diego $apellido"
+    println(nombreCompleto)
 }
