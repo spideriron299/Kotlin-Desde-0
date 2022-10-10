@@ -1,21 +1,11 @@
 
 fun main(args: Array<String>) {
-    val largoDelValorInicial = superfuncion(valorInicial = "Hola") {valor ->
-        valor.length
+    var nombre : String? = null
+    nombre?.let {
+        valor -> println("El nombre no es nulo es $valor")
     }
-
-    println(largoDelValorInicial)
-
-    val lambda: () -> String = funcionInception("Diego")
-    val valorLambda: String = lambda()
-    println(valorLambda)
-}
-fun superfuncion(valorInicial : String, block : (String) -> Int) : Int {
-    return block(valorInicial)
-}
-
-fun funcionInception(nombre : String) : () -> String {
-    return {
-        "Hola desde la lambda $nombre"
+    nombre = "Diego"
+    nombre?.let {
+            valor -> println("El nombre no es nulo es $valor")
     }
 }
