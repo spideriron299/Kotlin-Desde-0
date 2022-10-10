@@ -1,34 +1,17 @@
 fun main(args: Array<String>) {
-    //maps, son diccionarios de Kotlin o hash tables
-    //Mapa inmutables, ni eliminar ni modificar
-    val edadDeSuperheroes = mapOf(
-        "ironman" to 35,
-        "spiderman" to 25,
-        "Capipaleta" to 99
-    )
-    println(edadDeSuperheroes)
+    //Sets, no pueden tener elementos repetidos. No tienen un orden en especifico
+    val vocalesRepetidas = setOf("a","e","i","o","u","a","e","i","o","u")
+    println(vocalesRepetidas)
 
-    //Lista mutable
-    var edadSuperHeroesMutable = mutableMapOf(
-        "ironman" to 35,
-        "spiderman" to 25,
-        "Capipaleta" to 99
-    )
-    println(edadSuperHeroesMutable)
+    val numerosFavortios = mutableSetOf(1,2,3,4)
+    println(numerosFavortios)
+    numerosFavortios.add(5)
+    println(numerosFavortios)
 
-    edadSuperHeroesMutable.put("Wolverine",45)
+    //Se elimina el elemento dependiendo del valor, no de la poscision
+    numerosFavortios.remove(5)
+    println(numerosFavortios)
 
-    println(edadSuperHeroesMutable)
-
-    edadSuperHeroesMutable["Storm"] = 30
-    println(edadSuperHeroesMutable)
-
-    val edadIronman = edadSuperHeroesMutable["ironman"]
-    println(edadIronman)
-
-    edadSuperHeroesMutable.remove("Wolverine")
-    println(edadSuperHeroesMutable)
-
-    println(edadSuperHeroesMutable.keys)
-    println(edadSuperHeroesMutable.values)
+    val valorDelSet = numerosFavortios.firstOrNull { numero -> numero > 2 }
+    println(valorDelSet)
 }
