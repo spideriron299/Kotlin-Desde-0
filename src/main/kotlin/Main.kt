@@ -1,11 +1,8 @@
-
+//Con with accedes directamente a las propiedades de la variable
 fun main(args: Array<String>) {
-    var nombre : String? = null
-    nombre?.let {
-        valor -> println("El nombre no es nulo es $valor")
-    }
-    nombre = "Diego"
-    nombre?.let {
-            valor -> println("El nombre no es nulo es $valor")
+    val colores = listOf("azul","amarillo","Rojo")
+    with(colores){
+        println("Nuestros colores son $this")
+        println("Esta lista tiene una cantidad de colores $size")
     }
 }
