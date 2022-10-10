@@ -1,24 +1,34 @@
 fun main(args: Array<String>) {
-    val numerosDeLoteria = listOf(11,22,43,56,78,66)
+    //maps, son diccionarios de Kotlin o hash tables
+    //Mapa inmutables, ni eliminar ni modificar
+    val edadDeSuperheroes = mapOf(
+        "ironman" to 35,
+        "spiderman" to 25,
+        "Capipaleta" to 99
+    )
+    println(edadDeSuperheroes)
 
-    val numerosSorted = numerosDeLoteria.sorted()
-    println(numerosSorted)
+    //Lista mutable
+    var edadSuperHeroesMutable = mutableMapOf(
+        "ironman" to 35,
+        "spiderman" to 25,
+        "Capipaleta" to 99
+    )
+    println(edadSuperHeroesMutable)
 
-    val numerosDeLoteriaDesendientes = numerosDeLoteria.sortedDescending()
-    println(numerosDeLoteriaDesendientes)
+    edadSuperHeroesMutable.put("Wolverine",45)
 
-    val ordenarPorMultiplos = numerosDeLoteria.sortedBy { numero -> numero < 50 }
-    println(ordenarPorMultiplos)
+    println(edadSuperHeroesMutable)
 
-    val numerosAleatorios = numerosDeLoteria.shuffled()
-    println(numerosAleatorios)
+    edadSuperHeroesMutable["Storm"] = 30
+    println(edadSuperHeroesMutable)
 
-    val numerosEnReversa =  numerosDeLoteria.reversed()
-    println(numerosEnReversa)
+    val edadIronman = edadSuperHeroesMutable["ironman"]
+    println(edadIronman)
 
-    val mensajesDeNUmeros = numerosDeLoteria.map{ numero -> "Tu numero de loteria es $numero" }
+    edadSuperHeroesMutable.remove("Wolverine")
+    println(edadSuperHeroesMutable)
 
-    val numerosFiltrados = numerosDeLoteria.filter { numero -> numero > 50 }
-    println(numerosFiltrados)
-    println(mensajesDeNUmeros)
+    println(edadSuperHeroesMutable.keys)
+    println(edadSuperHeroesMutable.values)
 }
