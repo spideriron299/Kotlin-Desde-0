@@ -1,17 +1,18 @@
 fun main(args: Array<String>) {
-    //Sets, no pueden tener elementos repetidos. No tienen un orden en especifico
-    val vocalesRepetidas = setOf("a","e","i","o","u","a","e","i","o","u")
-    println(vocalesRepetidas)
-
-    val numerosFavortios = mutableSetOf(1,2,3,4)
-    println(numerosFavortios)
-    numerosFavortios.add(5)
-    println(numerosFavortios)
-
-    //Se elimina el elemento dependiendo del valor, no de la poscision
-    numerosFavortios.remove(5)
-    println(numerosFavortios)
-
-    val valorDelSet = numerosFavortios.firstOrNull { numero -> numero > 2 }
-    println(valorDelSet)
+    val fraseAleatoria = "Me gusta mi gordita".randomCase()
+    imprimirFrase(fraseAleatoria)
+}
+//Funcio normal
+fun imprimirFrase(frase : String) : Unit {
+    println("Tu frase es : $frase")
+}
+//FUNCION DE EXTENSION :D
+fun String.randomCase() : String {
+    val numeroAletorio = 0..99
+    val resultadoAleatorio = numeroAletorio.random()
+    return if (resultadoAleatorio.rem(2) == 0){
+        this.toUpperCase()
+    } else {
+        this.toLowerCase()
+    }
 }
