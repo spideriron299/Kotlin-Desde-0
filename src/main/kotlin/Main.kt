@@ -1,8 +1,10 @@
-//Con with accedes directamente a las propiedades de la variable
+
 fun main(args: Array<String>) {
-    val colores = listOf("azul","amarillo","Rojo")
-    with(colores){
-        println("Nuestros colores son $this")
-        println("Esta lista tiene una cantidad de colores $size")
-    }
+    val moviles = mutableListOf("Google Pixel 2XL", "Google Pixel 4a", "Huawei Redmi 9", "Xiaomi mi A3")
+        .run {
+            removeIf{ movil -> movil.contains("Google")}
+        this
+        }
+    println(moviles)
+
 }
