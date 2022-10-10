@@ -1,14 +1,8 @@
 
 fun main(args: Array<String>) {
-    val moviles = mutableListOf("Google Pixel 2XL", "Google Pixel 4a", "Huawei Redmi 9", "Xiaomi mi A3").apply {
-        removeIf{ movil -> movil.contains("Google") }
-    }
+    val moviles = mutableListOf("Google Pixel 2XL", "Google Pixel 4a", "Huawei Redmi 9", "Xiaomi mi A3").also {
+        lista -> println("El valor original de la lista es $lista")
+    }.asReversed()
     println(moviles)
-
-    val colores : MutableList<String>? = mutableListOf("Amarillo", "Rojo", "Azul")
-    colores?.apply {
-        println("Nuestros colores son $this")
-        println("Cantidad de coloes es $size")
-    }
 
 }
