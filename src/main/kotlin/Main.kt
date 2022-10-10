@@ -1,28 +1,21 @@
 
 fun main(args: Array<String>) {
-
-    // Como crear una lambda
-    val myLambda : (String) -> Int = {
-        it.length
+    val largoDelValorInicial = superfuncion(valorInicial = "Hola") {valor ->
+        valor.length
     }
 
-    val myLambda2 : (String) -> Int = { texto ->
-        texto.length * 2
+    println(largoDelValorInicial)
+
+    val lambda: () -> String = funcionInception("Diego")
+    val valorLambda: String = lambda()
+    println(valorLambda)
+}
+fun superfuncion(valorInicial : String, block : (String) -> Int) : Int {
+    return block(valorInicial)
+}
+
+fun funcionInception(nombre : String) : () -> String {
+    return {
+        "Hola desde la lambda $nombre"
     }
-
-    // Como invocar una lambda
-    val resultadoDeLambda = myLambda("Hola Platzi")
-    println(resultadoDeLambda)
-
-    // Como usar una lambda como parámetro
-    val listaDeString = listOf("A","B","C")
-
-    val resultadoLambdaSinVariable = listaDeString.map { texto ->
-        texto.length * 2
-    }
-    println(resultadoLambdaSinVariable)
-
-    val resultadoLambda= listaDeString.map(myLambda2)
-    println(resultadoLambda)
-
 }
